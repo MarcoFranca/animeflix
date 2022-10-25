@@ -1,10 +1,10 @@
+import Router from "./assets/router/router";
 
-import './App.css';
 
 function App() {
   return (
     <div>
-
+        <Router/>
     </div>
   );
 }
