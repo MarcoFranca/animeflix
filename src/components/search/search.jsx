@@ -1,10 +1,11 @@
 import React from "react";
+import {Input} from "./searchStyle";
 
-export default function Search({onchange}) {
+export default function Search({onchange, category}) {
 
     return (
         <>
-            <input type="search"  onChange={onchange}/>
+            <Input type="search"  onChange={onchange} placeholder={`procure o seu ${category}` }/>
         </>
     )
 }
