@@ -2,8 +2,11 @@ import styled from "styled-components";
 import {font} from "../../assets/global/font/fonts";
 
 export const Body = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #333232;
-  min-height: calc(100vh - 67px);
+  min-height: 100vh;
 
 `
 

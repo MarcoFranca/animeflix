@@ -16,7 +16,7 @@ export const Nav = styled.nav`
   width: 100%;
   justify-content: flex-end;
   align-items: center;
-  background-color: black;
+  background-color: rgba(0, 0, 0);
   color: white;
   padding: 25px;
   gap: 25px;
@@ -25,7 +25,7 @@ export const Nav = styled.nav`
   -moz-box-shadow: 0 6px 20px 3px rgba(0,0,0,0.67);
   box-shadow: 0 6px 20px 13px rgba(0,0,0,0.67);
   z-index: 5;
-  
+
 `
 
 export const Ul = styled.ul`
