@@ -4,7 +4,8 @@ const initialState = {
     url:'https://kitsu.io/api/edge/',
     category:'anime',
     filter:'',
-    text:''
+    text: '',
+    displayText:""
 }
 
 export const apiSlice = createSlice({
@@ -18,9 +19,13 @@ export const apiSlice = createSlice({
             state.filter = (action.payload === "")?"":"?filter[text]="
             state.text = action.payload
         },
+
+        setDisplayText: (state, action) =>{
+            state.displayText = action.payload
+        },
     }
 })
 
-export const {setCategory, setText} = apiSlice.actions;
+export const {setCategory, setText, setDisplayText} = apiSlice.actions;
 
 export default apiSlice.reducer;
