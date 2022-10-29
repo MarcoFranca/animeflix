@@ -1,11 +1,12 @@
 import React from "react";
 import {Banner, Header, Li, Nav, Ul} from "./navigateStyle";
 import Search from "../search/search";
-import {setCategory, setDisplayText, setText} from "../../assets/redux/apiSlice";
+import {setCategory, setDisplayText, setPageOffset, setText} from "../../assets/redux/apiSlice";
 import {useDispatch, useSelector} from "react-redux";
 import BannerDesk from "../../assets/image/desktop/manga.jpg"
 import {setAnime, setManga, setUserCategory} from "../../assets/redux/valueSlice";
 import useDebounce from "../../assets/hooks/useDebounce";
+import {setOffset} from "../../assets/redux/paginationSlice";
 
 
 export default function Navigate() {
@@ -31,6 +32,8 @@ export default function Navigate() {
 
         const textChange = (string)=>{
             dispatch(setDisplayText(string.target.value))
+            dispatch(setPageOffset(0))
+            dispatch(setOffset(0))
             debounceChange(string.target.value)
         }
 

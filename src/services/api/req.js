@@ -1,8 +1,9 @@
 import axios from "axios";
 import {setAnimes} from "../../assets/redux/valueSlice";
+import {setTotal} from "../../assets/redux/paginationSlice";
 
-export const getAnime = (url,category,filter, text, dispatch)=>{
-    axios.get(url + category + filter + text ,
+export const getAnime = (url,category,filter, text, pageLimit, offset, dispatch)=>{
+    axios.get(url + category + filter + text + pageLimit + offset ,
         {
             headers: {
                 "Accept": "application/vnd.api+json",
@@ -10,8 +11,8 @@ export const getAnime = (url,category,filter, text, dispatch)=>{
             }
         }).then(response => {
         dispatch(setAnimes(response.data))
+        dispatch(setTotal(response.data.meta.count))
         console.log(response.data)
-        console.log(filter + text)
 
     }).catch((error)=> console.log(error))
 }
