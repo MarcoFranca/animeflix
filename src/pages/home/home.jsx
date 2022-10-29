@@ -3,7 +3,7 @@ import React, {useEffect, useRef} from "react";
 import animeLoading from "../../assets/image/several/goku_70.gif"
 import animewaiting from "../../assets/image/several/sonicImpaciente.gif"
 
-import {getAnime} from "../../services/api/req";
+import {getAnime, getDetails} from "../../services/api/req";
 import {useDispatch, useSelector} from "react-redux";
 import Navigate from "../../components/header/navigate";
 import {Body, Card, CardContent, Cards, Main, Title} from "./homeStyle";
@@ -71,7 +71,7 @@ export default function Home() {
                         <h1>Loading...</h1></div>}
 
                     {api.text && animes && animes.map((anime)=>
-                        <Card key={anime.id}>
+                        <Card key={anime.id} onClick={()=>getDetails(anime.links.self)}>
                             <img src={anime.attributes.posterImage.original} alt={anime.attributes.canonicalTitle}/>
                             <CardContent>
                                 <h1>{anime.attributes.canonicalTitle}</h1>
