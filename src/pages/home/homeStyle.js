@@ -29,9 +29,11 @@ export const Title = styled.div`
 
 export const Cards = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, max(250px));
   gap: 25px;
   padding: 25px;
+  
 
   .loading{
     display: flex;
@@ -56,6 +58,7 @@ export const Card = styled.div`
   border: solid 1px #727070;
   border-radius: 5px;
   overflow: hidden;
+  cursor: pointer;
 
   :hover {
     transform: scale(1.1);
@@ -72,7 +75,6 @@ export const CardContent = styled.div`
   flex-direction: column;
   padding: 15px;
   text-align: initial;
-  //min-height: 70px;
   gap: 10px;
   justify-content: space-evenly;
   letter-spacing: 0.1rem;
@@ -81,7 +83,6 @@ export const CardContent = styled.div`
     
   }
   span{
-    //font-family: "Open Sans", sans-serif;
     ${font.blackDark}
     font-size: 1rem;
   }
