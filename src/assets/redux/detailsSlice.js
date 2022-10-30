@@ -1,18 +1,25 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
-    id:""
+    details: null,
+    relationshipItens: []
 }
 
 const detailsSlice = createSlice({
     name:'details',
     initialState,
     reducers:{
-        setId:(state, action)=>{
-            state.id = action.payload
-        }
+        setDetails:(state, action)=>{
+            state.details = action.payload
+        },
+        setRelationshipItens:(state, action)=>{
+            state.relationshipItens.unshift(action.payload)
+        },
+        clearRelationshipItens:(state)=>{
+            state.relationshipItens.length = 0
+        },
     }
 })
 
-export const {setId} = detailsSlice.actions;
+export const {setDetails, clearRelationshipItens, setRelationshipItens} = detailsSlice.actions;
 export default detailsSlice.reducer;
