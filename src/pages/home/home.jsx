@@ -76,10 +76,13 @@ export default function Home() {
     },[animeDet])
 
     useEffect(()=>{
-        relationship.length > 0 && navigate("./detail")
+        relationship.length > 0 && goToDetails()
     },[relationship])
 
-
+const goToDetails = ()=>{
+    window.scrollTo(0,0);
+    navigate("./detail")
+}
 
 
     return (
@@ -117,15 +120,3 @@ export default function Home() {
 
     )
 }
-
-// const goDetails = (navigate, details)=>{
-//     dispatch(getMovieDetails(details))
-//     if (!details){
-//         console.log("falso")
-//     }else {
-//         console.log("verdadeiro")
-//         console.log(details)
-//         navigate('/details')
-//
-//     }
-// }
