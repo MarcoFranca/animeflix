@@ -46,8 +46,6 @@ export const Li = styled.li`
   
 `
 
-
-
 export const Banner = styled.div`
   display: flex;
   margin-top: 67px;

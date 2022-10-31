@@ -56,36 +56,66 @@ export const DetailMain = styled.div`
   background-color: #333232;
   color: white;
   padding: 25px;
-  ${font.blackDark}
+  box-sizing: border-box;
+  ${font.blackDark};
+  @media screen and (min-width: 1024px){
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
 `
 
 export const DetailContent = styled.div`
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
+  @media screen and (min-width: 1024px){
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+  }
 `
 
 export const DetailContentCard = styled.div`
   background-image: url(${(props)=>props.image});
   background-repeat: no-repeat;
   background-size: cover;
+  align-self: center;
   min-height: 20rem;
-  width: 15rem;
+  height: 40vh;
+  width: 70%;
   border-radius: 5px;
   border: solid 3px darkgoldenrod;
+
+  @media screen and (min-width: 700px){
+    height: 70vh;
+  }
+  @media screen and (min-width: 1024px){
+    height: 20rem;
+    width: 15rem;
+    border-radius: 5px;
+    border: solid 3px darkgoldenrod;
+  }
 `
 
 export const DetailContentDescription = styled.div`
   display: flex;
   flex-direction: column;
   gap: 25px;
-  width: 50%;
+  width: 90%;
   max-height: 330px;
   ${font.blackDark};
+  @media screen and (min-width: 1024px){
+    width: 50%;
+  }
   h2{
+    display: none;
     font-size: 1.6rem;
     font-weight: 500;
+    @media screen and (min-width: 1024px){
+      display: flex;
+    }
   }
 
   p{
@@ -175,6 +205,25 @@ export const DetailTrailer = styled.div`
     font-size: 1.6rem;
     font-weight: 500;
   }
+  iframe{
+    width: 300px;
+    height: 200px;
+  }
+  
+}
+  @media screen and (min-width: 1024px){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2{
+      padding: 2rem;
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+    iframe{
+      width: 853px;
+      height: 480px;
+    }
 `
 
 export const CardTitle = styled.h2`
