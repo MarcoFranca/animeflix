@@ -30,6 +30,7 @@ export default function Detail() {
     const goHome = () => {
         dispatch(clearRelationshipItens())
         dispatch(setDetails(null))
+        window.scrollTo(0,0);
         navigate("/")
     }
 
@@ -68,7 +69,7 @@ export default function Detail() {
                 </DetailContent>
                 <DetailTrailer>
                     <h2>Trailer</h2>
-                    <iframe width="600" height="355" src={`https://www.youtube.com/embed/${details.attributes.youtubeVideoId}`}
+                    <iframe src={`https://www.youtube.com/embed/${details.attributes.youtubeVideoId}`}
                             title="YouTube video player" frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen>
@@ -82,6 +83,7 @@ export default function Detail() {
                         return(<Card key={relItem.id} onClick={()=>{
                                 getDetails(relItem.links.self,dispatch)
                                 getRelationship(details.relationships.genres.links.self ,dispatch)
+                                window.scrollTo(0,0);
                             }}>
                                 <img src={relItem.attributes.posterImage.original} alt={relItem.attributes.canonicalTitle}/>
                                 <CardContent>
